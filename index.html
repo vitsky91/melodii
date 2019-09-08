@@ -22,133 +22,37 @@
 
     <!--/. Sidebar navigation -->
 <!--/.SideNav-->
-<div class="modal fade" id="navbarLogin" tabindex="1" role="dialog">
-        <div class="modal-dialog" role="document">
-      
-          <!-- Modal content -->
-          <div class="modal-content">
-            <!-- Modal body -->
-            <div class="modal-body">
-      
-              <!-- Pills navs -->
-              <ul class="nav md-pills nav-justified pills-info">
-                <li class="nav-item">
-                  <a class="nav-link border border-info border-rounded" data-toggle="tab" href="#navbarLogin-login" role="tab" aria-selected="false">Вход</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link border border-info border-rounded active show" data-toggle="tab" href="#navbarLogin-signup" role="tab" aria-selected="true">Регистрация</a>
-                </li>
-              </ul>
-      
-              <!-- Pills panels -->
-              <div class="tab-content py-0">
-      
-                <!--Panel 1-->
-                <div class="tab-pane fade" id="navbarLogin-login" role="tabpanel">
-      
-                  <!-- Default form login -->
-                  <form id="login" class="text-center" action="login" method="post">
-      
-                    <input type="hidden" id="security" name="security" value="3fc84a8d32" /><input type="hidden" name="_wp_http_referer" value="/docs/jquery/getting-started/download/" />
-                    <p class="status"></p>
-      
-                    <!-- Social login -->
-                    <div class="my-3">
-      
-                    </div>
-                    <!-- Social login -->
-      
-                    <!-- Default input -->
-                    <label class="grey-text" for="username">Введите имя или E-Mail</label>
-                    <input type="text" id="username" class="form-control" name="username">
-      
-                    <br>
-      
-                    <!-- Default input password -->
-                    <label class="grey-text" for="password">Введите пароль</label>
-                    <input type="password" id="password" class="form-control" name="password">
-      
-                    <div class="mt-4">
-                      <a href="https://mdbootstrap.com/my-account/lost-password/" class="btn btn-outline-info btn-md mb-4 waves-effect waves-light" type="submit">Forgot password?</a>
-                      <button class="btn btn-info btn-md mb-4 waves-effect waves-light" type="submit" value="LOGIN">Login</button>
-                    </div>
-      
-                  </form>
-                  <!-- Default form login -->
-      
-                </div>
-                <!--/.Panel 1-->
-      
-                <!--Panel 2-->
-                <div class="tab-pane fade in active show" id="navbarLogin-signup" role="tabpanel">
-      
-                  <!-- Default form register  -->
-                  <form id="register" class="text-center" action="register" method="post">
-      
-                    <input type="hidden" id="signonsecurity" name="signonsecurity" value="b9567a2573" /><input type="hidden" name="_wp_http_referer" value="/docs/jquery/getting-started/download/" />
-                    <!-- Social login -->
-      
-                    <p class="status"></p>
-      
-                    <div class="my-3">
-      
-      <!-- wsl_render_auth_widget -->
-      
-                    </div>
-                    <!-- Social login -->
-      
-                    <!-- Default input name -->
-                    <input type="text" id="signonname" class="form-control" name="signonname">
-                    <label for="signonname">Имя</label>
-      
-                    <br>
-      
-                    <!-- Default input username -->
-                    <input type="text" id="signonusername" class="form-control" name="signonusername">
-                    <label for="signonusername">Ник</label>
-      
-                    <br>
-      
-                    <!-- Default input email -->
-                    <input type="text" id="email" class="form-control" name="email">
-                    <label for="email">Почта</label>
-      
-                    <br>
-                    <!-- Default input password -->
-                    <input type="password" id="signonpassword" class="form-control" name="signonpassword">
-                    <label for="signonpassword">Пароль</label>
-      
-                    <br>
-      
-                    <!-- Default input password -->
-                    <input type="password" id="password2" class="form-control" name="password2">
-                    <label for="password2">Повторите пароль</label>
-      
-                    <!-- <div class="mt-4">
-                    <p class="small grey-text">By signing up you agree to data processing by the administrator: StartupFlow s.c. located in Kijowska 7, Warsaw. The administrator processes data following the <a target="_blank" href="https://mdbootstrap.com/privacy-policy/">Privacy Policy</a>.
-                    </p>
-                      <button class="btn btn-info btn-md mb-4 waves-effect waves-light" id="AJAXAuthRegisterBtn" type="submit" value="SIGNUP">Sign up</button>
-                    </div> -->
-      
-                  </form>
-                  <!-- Default form register  -->
-      
-                </div>
-                <!--/.Panel 2-->
-      
-              </div>
-              <!-- Pills panels -->
-      
-            </div>
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-info btn-md waves-effect waves-light" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-          <!-- Modal content -->
-        </div>
+
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="password" id="defaultForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- NAVIGATION -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top"> 
@@ -175,9 +79,13 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#navbarLogin">Вхiд</a>
             </li>
-            <li class="nav-item mr-auto navbar-right">
-                <a class="btn btn-md btn-rounded mr-auto" data-toggle="modal" data-target="#navbarLogin">Вход\Регистрация</a>
+            <li class="nav-item">
+                <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
+                        Modal Login Form</a>
             </li>
+            <!-- <li class="nav-item mr-auto navbar-right">
+                <a class="btn btn-md btn-rounded mr-auto" data-toggle="modal" data-target="#navbarLogin">Вход\Регистрация</a>
+            </li> -->
             
             <!-- <a id="navbar-static-login" class="btn btn-info btn-rounded btn-sm waves-effect waves-light" data-toggle="modal" data-target="#navbarLogin">Вход\Регистрация
                 <i class="d-none d-xl-inline-block fas fa-sign-in-alt ml-2"></i>
